@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.UI;
+using UnityEngine.SceneManagement;
 
 public class PanelsChanger : MonoBehaviour
 {
@@ -36,6 +34,16 @@ public class PanelsChanger : MonoBehaviour
 			upgradesPanel.SetActive(true);
 			currentPanel = upgradesPanel;
 		}
+		
+		if (panelType == 3)
+		{
+			LoadGame();
+		}
+	}
+	
+	public void LoadGame()
+	{
+		SceneManager.LoadScene("Game");
 	}
 }
 
@@ -43,5 +51,6 @@ public enum PanelType
 {
 	Menu = 0,
 	Options = 1,
-	Upgrades = 2
+	Upgrades = 2,
+	Game = 3
 }
