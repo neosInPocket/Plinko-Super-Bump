@@ -10,5 +10,7 @@ public class GameOptionsLoader : MonoBehaviour
 		{
 			GameOptions.ClearData();
 		}
+		
+		GameOptions.Load();
 	}
 }

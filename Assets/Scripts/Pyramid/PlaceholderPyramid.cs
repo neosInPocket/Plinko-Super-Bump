@@ -12,6 +12,7 @@ public class PlaceholderPyramid : MonoBehaviour
 	[SerializeField] private Vector2 xBorders;
 	[SerializeField] private float bordersDelta;
 	[SerializeField] private  int rowCount;
+	[SerializeField] private bool enableSound;
 	
 	private Vector2 screenSize;
 	
@@ -39,7 +40,8 @@ public class PlaceholderPyramid : MonoBehaviour
 			
 			for (int j = rowCount - i; j > 0; j--)
 			{
-				Instantiate(piecePrefab, position, Quaternion.identity, container);
+				var piece = Instantiate(piecePrefab, position, Quaternion.identity, container);
+				if (!enableSound) piece.EnableAudio = false;
 				position.x += xStep;
 			}
 			

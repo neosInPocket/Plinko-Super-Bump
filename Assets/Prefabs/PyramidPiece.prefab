@@ -160,9 +160,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b3f7efe0fbf037a4fbc70f64e93a8b6d, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: c386be697cc72394382b5a162fcd83c4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.581
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -261,4 +261,4 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6940488790435500123}
   pingSource: {fileID: 2091187392508037816}
   randomPercent: 5
-  duration: 0.4
+  duration: 1

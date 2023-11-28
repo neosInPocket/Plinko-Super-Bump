@@ -8,25 +8,35 @@ public class PyramidPiece : MonoBehaviour
 	[SerializeField] private AudioSource pingSource;
 	[SerializeField] private float randomPercent;
 	[SerializeField] private float duration;
+	private Color initialColor;
 	
 	public SpriteRenderer SpriteRenderer => spriteRenderer;
+	public bool EnableAudio { get; set; }
+	
+	private void Start()
+	{
+		initialColor = spriteRenderer.color;
+	}
 	
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		pingSource.Stop();
-		pingSource.pitch *= 1 + Random.Range(-randomPercent / 100, randomPercent / 100);
-		pingSource.Play();
+		if (EnableAudio)
+		{
+			pingSource.Stop();
+			pingSource.pitch *= 1 + Random.Range(-randomPercent / 100, randomPercent / 100);
+			pingSource.Play();
+		}
 		
+		StopAllCoroutines();
 		var fallingBallColor = collision.collider.GetComponent<FallingBall>().BallColor;
 		StartCoroutine(Fade(fallingBallColor, duration));
 	}
 	
 	private IEnumerator Fade(Color color, float duration)
 	{
-		var initialColor = spriteRenderer.color;
 		spriteRenderer.color = color;
 		float t = 0;
-		float tStep = 1 / duration / 60;
+		float tStep = 1 / duration * Time.fixedDeltaTime;
 		
 		while (t < 1)
 		{

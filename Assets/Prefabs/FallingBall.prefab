@@ -163,5 +163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 9204052124491794358}
   possibleColors:
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.06587124, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.92855215, a: 1}
