@@ -3614,7 +3614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682214719}
   m_Layer: 5
-  m_Name: LifesHolder
+  m_Name: SingleColorHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7310,7 +7310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180fabbc98a874b45bb6fbf7fd1208f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifesImages:
+  singleColorImages:
   - {fileID: 1197798659}
   - {fileID: 801568243}
   - {fileID: 557387721}
@@ -7318,9 +7318,9 @@ MonoBehaviour:
   - {fileID: 1984805297}
   - {fileID: 829854999}
   - {fileID: 1266602199}
-  lifesPurchase: {fileID: 30375233}
+  singleColorPurchase: {fileID: 30375233}
   gravityPurchase: {fileID: 1255821845}
-  lifesButtonCaption: {fileID: 1596958301}
+  singleColorButtonCaption: {fileID: 1596958301}
   gravityButtonCaption: {fileID: 943922884}
   coins: {fileID: 174770261}
 --- !u!1 &1812225404
@@ -7910,7 +7910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d702d9f94626ff4aadcac1767610f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetGameOptions: 0
+  resetGameOptions: 1
 --- !u!4 &1899476186
 Transform:
   m_ObjectHideFlags: 0
@@ -8428,7 +8428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LIFES AMOUNT
+  m_text: single color uses
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a8a7cc938306344a9c1b752f79c8c9d, type: 2}
   m_sharedMaterial: {fileID: 8819477480529895269, guid: 2a8a7cc938306344a9c1b752f79c8c9d, type: 2}
@@ -8455,7 +8455,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 82.45
+  m_fontSize: 61.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8651,7 +8651,7 @@ GameObject:
   - component: {fileID: 2127480982}
   - component: {fileID: 2127480981}
   m_Layer: 5
-  m_Name: LIfes
+  m_Name: SingleColorUse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

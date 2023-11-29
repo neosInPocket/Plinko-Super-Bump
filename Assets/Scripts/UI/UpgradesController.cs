@@ -8,11 +8,11 @@ using UnityEngine.UI;
 
 public class UpgradesController : MonoBehaviour
 {
-	[SerializeField] private List<Image> lifesImages;
+	[SerializeField] private List<Image> singleColorImages;
 	[SerializeField] private List<Image> gravityImages;
-	[SerializeField] private Button lifesPurchase;
+	[SerializeField] private Button singleColorPurchase;
 	[SerializeField] private Button gravityPurchase;
-	[SerializeField] private TMP_Text lifesButtonCaption;
+	[SerializeField] private TMP_Text singleColorButtonCaption;
 	[SerializeField] private TMP_Text gravityButtonCaption;
 	[SerializeField] private TMP_Text coins;
 	
@@ -23,14 +23,14 @@ public class UpgradesController : MonoBehaviour
 	
 	public void Refresh()
 	{
-		foreach(var image in lifesImages.Concat(gravityImages).ToList())
+		foreach(var image in singleColorImages.Concat(gravityImages).ToList())
 		{
 			image.enabled = false;
 		}	
 		
 		for (int i = 0; i < GameOptions.SingleColorCount; i++)
 		{
-			lifesImages[i].enabled = true;
+			singleColorImages[i].enabled = true;
 		}
 		
 		for (int i = 0; i < GameOptions.Gravity; i++)
@@ -38,18 +38,18 @@ public class UpgradesController : MonoBehaviour
 			gravityImages[i].enabled = true;
 		}
 		
-		if (GameOptions.Gold >= 100 && GameOptions.SingleColorCount <= 3)
+		if (GameOptions.Gold >= 100 && GameOptions.SingleColorCount < 3)
 		{
-			lifesPurchase.interactable = true;
-			SetTextAlpha(lifesButtonCaption, 1f);
+			singleColorPurchase.interactable = true;
+			SetTextAlpha(singleColorButtonCaption, 1f);
 		}
 		else
 		{
-			lifesPurchase.interactable = false;
-			SetTextAlpha(lifesButtonCaption, 0.5f);
+			singleColorPurchase.interactable = false;
+			SetTextAlpha(singleColorButtonCaption, 0.5f);
 		}
 		
-		if (GameOptions.Gold >= 45 && GameOptions.Gravity <= 3)
+		if (GameOptions.Gold >= 45 && GameOptions.Gravity < 3)
 		{
 			gravityPurchase.interactable = true;
 			SetTextAlpha(gravityButtonCaption, 1f);

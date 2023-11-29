@@ -4,5 +4,8 @@ using UnityEngine;
 
 public abstract class Resetable : MonoBehaviour
 {
-    public abstract void Reset();
+	public abstract void Reset();
+	public abstract void Enable();
+	public abstract void Disable();
+	
 }

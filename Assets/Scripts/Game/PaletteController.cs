@@ -28,7 +28,6 @@ public class PaletteController : Resetable
 		}
 		
 		SubscribeTiles();
-		ToggleTiles(true);
 	}
 	
 	public bool UseColor()
@@ -49,7 +48,18 @@ public class PaletteController : Resetable
 			return true;
 		}
 	}
-	
+
+	public override void Enable()
+	{
+		ToggleTiles(true);
+	}
+
+	public override void Disable()
+	{
+		ToggleTiles(false);
+	}
+
+
 	public void RemoveColor(Color color)
 	{
 		ColorsInUse.Remove(color);
@@ -72,7 +82,9 @@ public class PaletteController : Resetable
 	
 	public override void Reset()
 	{
+		ColorsInUse = new List<Color>();
 		CurrentColor = possibleColors.Colors[0];
+		OnTileSelected(CurrentColor);
 		ToggleTiles(false);
 	}
 	

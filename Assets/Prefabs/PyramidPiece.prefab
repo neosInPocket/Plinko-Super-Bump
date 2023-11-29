@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7375199469601657695}
   - component: {fileID: 2091187392508037816}
   - component: {fileID: 867999574820663879}
+  - component: {fileID: 1507565446444298777}
   m_Layer: 0
   m_Name: PyramidPiece
   m_TagString: Untagged
@@ -263,9 +264,23 @@ MonoBehaviour:
   circleCollider2D: {fileID: 7375199469601657695}
   pingSource: {fileID: 2091187392508037816}
   selectedEffect: {fileID: 5825585437569600996}
+  colorMatchEffect: {fileID: 24270708641856615, guid: ae5be1c9a315efa45ac42318d9d12138, type: 3}
   randomPercent: 5
   duration: 1
   size: 0.25
+--- !u!114 &1507565446444298777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758301913744510977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd689d3b3c399ce4bbbbf9fb861c8fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 2091187392508037816}
 --- !u!1001 &8441347566760515450
 PrefabInstance:
   m_ObjectHideFlags: 0

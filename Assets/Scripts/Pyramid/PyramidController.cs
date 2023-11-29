@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PyramidController : MonoBehaviour
+public class PyramidController : Resetable
 {
 	[SerializeField] private PaletteController paletteController;
 	
@@ -12,15 +13,20 @@ public class PyramidController : MonoBehaviour
 	[SerializeField] private Vector2 yBorders;
 	[SerializeField] private Vector2 xBorders;
 	[SerializeField] private float bordersDelta;
-	[SerializeField] private  int rowCount;
+	[SerializeField] private int rowCount;
+	[SerializeField] private bool enableSound;
 	
 	private List<PyramidPiece> pieces;
-	
 	private Vector2 screenSize;
+	public Action ColorMatch;
+	
+	private void Awake()
+	{
+		pieces = new();
+	}
 	
 	private void Start()
 	{
-		pieces = new();
 		screenSize = GameTools.GetScreenSize();
 		
 		Build();
@@ -45,6 +51,7 @@ public class PyramidController : MonoBehaviour
 			{
 				var piece = Instantiate(piecePrefab, position, Quaternion.identity, container);
 				piece.ColorMatch += OnPieceColorMatch;
+				piece.EnableAudio = enableSound;
 				pieces.Add(piece);
 				position.x += xStep;
 			}
@@ -56,6 +63,7 @@ public class PyramidController : MonoBehaviour
 	private void OnPieceColorMatch(Color color)
 	{
 		paletteController.RemoveColor(color);
+		ColorMatch?.Invoke();
 	}
 	
 	private void UnsubscribePieces()
@@ -69,5 +77,23 @@ public class PyramidController : MonoBehaviour
 	private void OnDestroy()
 	{
 		UnsubscribePieces();
+	}
+
+	public override void Reset()
+	{
+		foreach (var piece in pieces)
+		{
+			piece.PieceColor = Color.white;
+		}
+	}
+
+	public override void Enable()
+	{
+		
+	}
+
+	public override void Disable()
+	{
+		
 	}
 }

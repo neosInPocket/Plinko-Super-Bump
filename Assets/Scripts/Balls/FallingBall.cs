@@ -16,6 +16,29 @@ public class FallingBall : MonoBehaviour
 	private void Start()
 	{
 		spriteRenderer.color = possibleColors.Colors[Random.Range(0, possibleColors.Colors.Count)];
+		float gravityScale = 0;
+		
+		switch (GameOptions.Gravity)
+		{
+			case 0:
+			gravityScale = 0.3f;
+			break;
+			
+			case 1:
+			gravityScale = 0.25f;
+			break;
+			
+			case 2:
+			gravityScale = 0.2f;
+			break;
+			
+			case 3:
+			gravityScale = 0.15f;
+			break;
+		}
+		
+		rigid2D.gravityScale = gravityScale;
+		
 	}
 	
 	public void Destroy()

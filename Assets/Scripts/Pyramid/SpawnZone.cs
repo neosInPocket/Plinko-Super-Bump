@@ -18,7 +18,6 @@ public class SpawnZone : Resetable
 	{
 		screenSize = GameTools.GetScreenSize();
 		worldXSize = new Vector2(2 * screenSize.x * xSize.x - screenSize.x, 2 * screenSize.x * xSize.y - screenSize.x);
-		Enable();
 	}
 	
 	private void FixedUpdate()
@@ -27,14 +26,15 @@ public class SpawnZone : Resetable
 		StartCoroutine(Spawn());
 	}
 	
-	public void Enable()
+	public override void Enable()
 	{
 		isEnabled = true;
 	}
 	
-	public void Disable()
+	public override void Disable()
 	{
 		isEnabled = false;
+		isSpawning = false;
 	}
 	
 	public void Clear()
@@ -54,7 +54,7 @@ public class SpawnZone : Resetable
 	{
 		foreach (Transform ball in transform)
 		{
-			Destroy(transform.gameObject);
+			Destroy(ball.gameObject);
 		}
 	}
 	

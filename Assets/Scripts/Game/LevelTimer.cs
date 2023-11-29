@@ -11,18 +11,12 @@ public class LevelTimer : Resetable
 	private bool paused;
 	public Action TimeExpired;
 	
-	private void Start()
-	{
-		Reset();
-		StartTimer(50);
-	}
-	
 	public void StartTimer(float seconds)
 	{
 		StartCoroutine(TimerRoutine(seconds));
 	}
 	
-	public void StopTimer()
+	public override void Disable()
 	{
 		StopAllCoroutines();
 	}
@@ -66,4 +60,6 @@ public class LevelTimer : Resetable
 		timerText.text = "0,00";
 		TimeExpired?.Invoke();
 	}
+
+	public override void Enable() { }
 }

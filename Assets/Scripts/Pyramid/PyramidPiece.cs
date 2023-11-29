@@ -9,9 +9,11 @@ public class PyramidPiece : MonoBehaviour
 	[SerializeField] private CircleCollider2D circleCollider2D;
 	[SerializeField] private AudioSource pingSource;
 	[SerializeField] private GameObject selectedEffect; 
+	[SerializeField] private GameEffect colorMatchEffect;
 	[SerializeField] private float randomPercent;
 	[SerializeField] private float duration;
 	[SerializeField] private float size;
+	
 	
 	public Action<Color> ColorMatch;
 	
@@ -60,6 +62,7 @@ public class PyramidPiece : MonoBehaviour
 			{
 				ColorMatch?.Invoke(currentStaticColor);
 				PieceColor = Color.white;
+				Instantiate(colorMatchEffect, transform.position, Quaternion.identity, transform);
 			}
 			
 			StopAllCoroutines();

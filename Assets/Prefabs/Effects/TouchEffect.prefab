@@ -24137,6 +24137,7 @@ GameObject:
   - component: {fileID: 6339197305528211862}
   - component: {fileID: 999382964299180996}
   - component: {fileID: 5230826061932758011}
+  - component: {fileID: -743086356239917670}
   m_Layer: 0
   m_Name: TouchEffect
   m_TagString: Untagged
@@ -29142,6 +29143,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particles: {fileID: 5746095707184773630}
+--- !u!114 &-743086356239917670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483413084651831116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd689d3b3c399ce4bbbbf9fb861c8fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 6081999002656878693}
 --- !u!1 &8176303281500241552
 GameObject:
   m_ObjectHideFlags: 0
