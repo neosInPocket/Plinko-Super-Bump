@@ -563,6 +563,7 @@ MonoBehaviour:
   resetter: {fileID: 376689443}
   pyramidController: {fileID: 759638404}
   levelTimer: {fileID: 1734834446}
+  touchController: {fileID: 1098391318}
 --- !u!4 &176555527
 Transform:
   m_ObjectHideFlags: 0
@@ -2403,6 +2404,7 @@ MonoBehaviour:
   xBorders: {x: 0.1, y: 0.9}
   bordersDelta: 0
   rowCount: 6
+  enableSound: 0
 --- !u!4 &759638405
 Transform:
   m_ObjectHideFlags: 0
@@ -4096,7 +4098,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1127583435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 176555526}
+        m_TargetAssemblyTypeName: GameLoader, Assembly-CSharp
+        m_MethodName: GetMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1127583435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5178,6 +5192,7 @@ MonoBehaviour:
   spawnZone: {fileID: 1478248784}
   pauseImage: {fileID: 1355885834}
   levelTimer: {fileID: 1734834446}
+  touchController: {fileID: 1098391318}
 --- !u!1 &1449888476
 GameObject:
   m_ObjectHideFlags: 0
@@ -5305,6 +5320,7 @@ MonoBehaviour:
   xSize: {x: 0.3, y: 0.7}
   spawnDelay: 1
   fallingBallPrefab: {fileID: 5635971921241544005, guid: bccc1284728cbe847b472804c8749c90, type: 3}
+  isEnabled: 0
 --- !u!1 &1512652831
 GameObject:
   m_ObjectHideFlags: 0

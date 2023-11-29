@@ -11,4 +11,55 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 9033cd18cbafbd14889b8143cea2d4a2
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner.unity
+    guid: 7d317784b129adf4b96e825769f66d1b
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 1.unity
+    guid: fef7d4f7c10ed41419f2d9aa7e4ea222
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 2.unity
+    guid: 4b7bb0185a33eaf44b86e63ccc197829
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 3.unity
+    guid: 8fc75a65a5a64154e8b974f7f0b2e6ad
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 4.unity
+    guid: 395424eff03d05f4fa8862ff818beb8e
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 5.unity
+    guid: 65becea18a83c1944a63ba007ed924ce
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 6.unity
+    guid: 326aa4e7098263847b9d4e7301d58c22
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 7.unity
+    guid: d05b1ebcb5af8b949a15799de000e1a7
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 8.unity
+    guid: bbb5f653edd701445a637b0f57736725
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 9.unity
+    guid: 3de2525286dd0e34b95c54bbc0f44127
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 10.unity
+    guid: fb89ae766b5a65244ad55baacbaf466d
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 11.unity
+    guid: 987389d54ef51ba4c99ac6632e7ab8f6
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 12.unity
+    guid: bc09aaada899c6b41bf4a16edb615e7f
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 13.unity
+    guid: 77c14bacd48b13143a9482c24537b996
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 14.unity
+    guid: 2778e05949b829742bf8e0d0c938449c
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 15.unity
+    guid: 703316ca90cf1b546b6bf647a4705ee7
+  - enabled: 1
+    path: Assets/Scenes/PyramidSpawner 16.unity
+    guid: 8ce282116d81016488d5da20aef46c2c
   m_configObjects: {}

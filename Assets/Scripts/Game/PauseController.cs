@@ -7,10 +7,12 @@ public class PauseController : MonoBehaviour
 	[SerializeField] private SpawnZone spawnZone;
 	[SerializeField] private Animator pauseImage; 
 	[SerializeField] private LevelTimer levelTimer;
+	[SerializeField] private TouchController touchController;
 	
 	public void Pause()
 	{
 		levelTimer.Pause();
+		touchController.Disable();
 		
 		spawnZone.Disable();
 		foreach (Transform ball in spawnZone.transform)
@@ -27,6 +29,7 @@ public class PauseController : MonoBehaviour
 	public void Unpause()
 	{
 		levelTimer.UnPause();
+		touchController.Enable();
 		spawnZone.Enable();
 		foreach (Transform ball in spawnZone.transform)
 		{

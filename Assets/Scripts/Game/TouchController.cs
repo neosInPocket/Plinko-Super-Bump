@@ -7,12 +7,10 @@ public class TouchController : MonoBehaviour
 	[SerializeField] private PaletteController paletteController;
 	[SerializeField] private GameObject touchEffect;
 	
-	private void Start()
+	private void Awake()
 	{
 		EnhancedTouchSupport.Enable();
 		TouchSimulation.Enable();
-		
-		Enable();
 	}
 	
 	public void Enable()

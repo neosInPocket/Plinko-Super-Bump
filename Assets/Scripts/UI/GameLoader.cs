@@ -7,6 +7,7 @@ public class GameLoader : MonoBehaviour
 	[SerializeField] private Resetter resetter;
 	[SerializeField] private PyramidController pyramidController;
 	[SerializeField] private LevelTimer levelTimer;
+	[SerializeField] private TouchController touchController;
 	
 	public Action<bool> MatchColor;
 	public Action TimerExpired;
@@ -23,12 +24,13 @@ public class GameLoader : MonoBehaviour
 	{
 		LevelData = new LevelBuilder();
 		resetter.AllReset();
+		touchController.Disable();
 	}
 	
 	public void StartGame()
 	{
 		resetter.AllEnable();
-		
+		touchController.Enable();
 	}
 	
 	private void OnColorMatch()
@@ -50,6 +52,7 @@ public class GameLoader : MonoBehaviour
 	{
 		resetter.AllDisable();
 		TimerExpired?.Invoke();
+		touchController.Disable();
 	}
 	
 	public void LoseGame()

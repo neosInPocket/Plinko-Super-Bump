@@ -8,10 +8,10 @@ public class SpawnZone : Resetable
 	[SerializeField] private Vector2 xSize;
 	[SerializeField] private float spawnDelay;
 	[SerializeField] private FallingBall fallingBallPrefab;
+	[SerializeField] private bool isEnabled; 
 	private Vector2 screenSize;
 	private Vector2 worldXSize;
 	private bool isSpawning;
-	private bool isEnabled;
 	
 		
 	private void Start()
