@@ -165,3 +165,4 @@ MonoBehaviour:
   circleCollider2D: {fileID: -1773726878597688156}
   possibleColors: {fileID: 11400000, guid: 5311207f4bab06e4abbaa09cea5015db, type: 2}
   destroyEffect: {fileID: 4464690364111676878, guid: 65459fe6940835e409d5849f98ca7a02, type: 3}
+  rigid2D: {fileID: -7490568145687629499}

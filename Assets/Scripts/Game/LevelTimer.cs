@@ -1,56 +1,69 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelTimer : MonoBehaviour
+public class LevelTimer : Resetable
 {
 	[SerializeField] private Image timerFill;
 	[SerializeField] private TMP_Text timerText;
-	private bool started;
-	private float timerSeconds;
-	private float startTime;
+	private bool paused;
+	public Action TimeExpired;
 	
 	private void Start()
 	{
-		StartTimer(10);
-	}
-	
-	private void Update()
-	{
-		if (!started) return;
-		
-		if (startTime - Time.time > 0)
-		{
-			startTime -= Time.deltaTime;
-			timerFill.fillAmount = (startTime - Time.time) / timerSeconds;
-			timerText.text =  (startTime - Time.time).ToString("F2");
-		}
-		else
-		{
-			timerFill.fillAmount = 0;
-			timerText.text = "0,00";
-			started = false;
-		}
-		
+		Reset();
+		StartTimer(50);
 	}
 	
 	public void StartTimer(float seconds)
 	{
-		timerSeconds = seconds;
-		startTime = Time.time + seconds;
-		started = true;
+		StartCoroutine(TimerRoutine(seconds));
 	}
 	
 	public void StopTimer()
 	{
-		started = false;
+		StopAllCoroutines();
 	}
 	
-	public void ResetTimer()
+	public override void Reset()
 	{
 		timerText.text = "0,00";
 		timerFill.fillAmount = 1f;
+	}
+	
+	public void Pause()
+	{
+		paused = true;
+	}
+	
+	public void UnPause()
+	{
+		paused = false;
+	}
+	
+	private IEnumerator TimerRoutine(float seconds)
+	{
+		var time = seconds;
+		
+		while (time > 0)
+		{
+			if (!paused)
+			{
+				time -= Time.fixedDeltaTime;
+				timerFill.fillAmount = time / seconds;
+				timerText.text = time.ToString("F2");
+				yield return new WaitForFixedUpdate();
+			}
+			else
+			{
+				yield return null;
+			}
+		}
+		
+		timerFill.fillAmount = 0;
+		timerText.text = "0,00";
+		TimeExpired?.Invoke();
 	}
 }

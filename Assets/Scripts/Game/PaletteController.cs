@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PaletteController : MonoBehaviour
+public class PaletteController : Resetable
 {
 	[SerializeField] private PossibleColorsController possibleColors;
 	[SerializeField] private List<PaletteTile> tiles;
@@ -73,7 +70,7 @@ public class PaletteController : MonoBehaviour
 		}
 	}
 	
-	public void Reset()
+	public override void Reset()
 	{
 		CurrentColor = possibleColors.Colors[0];
 		ToggleTiles(false);
