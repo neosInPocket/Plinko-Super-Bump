@@ -28,7 +28,7 @@ public class UpgradesController : MonoBehaviour
 			image.enabled = false;
 		}	
 		
-		for (int i = 0; i < GameOptions.Lifes; i++)
+		for (int i = 0; i < GameOptions.SingleColorCount; i++)
 		{
 			lifesImages[i].enabled = true;
 		}
@@ -38,7 +38,7 @@ public class UpgradesController : MonoBehaviour
 			gravityImages[i].enabled = true;
 		}
 		
-		if (GameOptions.Gold >= 100 && GameOptions.Lifes <= 3)
+		if (GameOptions.Gold >= 100 && GameOptions.SingleColorCount <= 3)
 		{
 			lifesPurchase.interactable = true;
 			SetTextAlpha(lifesButtonCaption, 1f);
@@ -66,7 +66,7 @@ public class UpgradesController : MonoBehaviour
 	public void PurchaseLifeUpgrade()
 	{
 		GameOptions.Gold -= 100;
-		GameOptions.Lifes++;
+		GameOptions.SingleColorCount++;
 		GameOptions.Save();
 		Refresh();
 	}

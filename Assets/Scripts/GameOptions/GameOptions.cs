@@ -4,7 +4,7 @@ public class GameOptions
 {
 	public static int Level;
 	public static int Gold;
-	public static int Lifes;
+	public static int SingleColorCount;
 	public static int Gravity;
 	public static int FirstRun;
 	public static float BackgroundSoundsVolume;
@@ -17,7 +17,7 @@ public class GameOptions
 	{
 		PlayerPrefs.SetInt("Level", Level);
 		PlayerPrefs.SetInt("Gold", Gold);
-		PlayerPrefs.SetInt("Lifes", Lifes);
+		PlayerPrefs.SetInt("SingleColorCount", SingleColorCount);
 		PlayerPrefs.SetInt("Gravity", Gravity);
 		PlayerPrefs.SetInt("BackgroundSoundsEnabled", BackgroundSoundsEnabled);
 		PlayerPrefs.SetInt("SFXEnabled", SFXEnabled);
@@ -32,7 +32,7 @@ public class GameOptions
 	{
 		Gold = PlayerPrefs.GetInt("Gold", 100);
 		Level = PlayerPrefs.GetInt("Level", 1);
-		Lifes = PlayerPrefs.GetInt("Lifes", 1);
+		SingleColorCount = PlayerPrefs.GetInt("SingleColorCount", 1);
 		Gravity = PlayerPrefs.GetInt("Gravity", 0);
 		BackgroundSoundsEnabled = PlayerPrefs.GetInt("BackgroundSoundsEnabled", 1);
 		SFXEnabled = PlayerPrefs.GetInt("SFXEnabled", 1);
@@ -45,7 +45,7 @@ public class GameOptions
 	{
 		Level = 1;
 		Gold = 100;
-		Lifes = 1;
+		SingleColorCount = 1;
 		Gravity = 0;
 		BackgroundSoundsEnabled = 1;
 		SFXEnabled = 1;

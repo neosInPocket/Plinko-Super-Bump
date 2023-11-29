@@ -56,7 +56,7 @@ public class PyramidPiece : MonoBehaviour
 		
 		if (collision.gameObject.TryGetComponent<FallingBall>(out FallingBall fallingBall))
 		{
-			if (fallingBall.BallColor == PieceColor)
+			if (fallingBall.BallColor == PieceColor && PieceColor != Color.white)
 			{
 				ColorMatch?.Invoke(currentStaticColor);
 				PieceColor = Color.white;

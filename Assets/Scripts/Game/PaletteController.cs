@@ -14,6 +14,11 @@ public class PaletteController : MonoBehaviour
 	public Action<Color> TileSelected;
 	public List<Color> ColorsInUse { get; set; }
 	
+	private void Awake()
+	{
+		GameOptions.Load();
+	}
+	
 	private void Start()
 	{	
 		ColorsInUse = new List<Color>();
@@ -31,16 +36,19 @@ public class PaletteController : MonoBehaviour
 	
 	public bool UseColor()
 	{
-		bool foundColor = ColorsInUse.Contains(CurrentColor);
+		int foundColorCount = ColorsInUse.Count(x => x == CurrentColor);
 		
-		if (foundColor)
+		if (foundColorCount >= GameOptions.SingleColorCount)
 		{
 			return false;
 		}
 		else
 		{
 			ColorsInUse.Add(CurrentColor);
-			tiles.FirstOrDefault(x => x.TileColor == CurrentColor).Active = false;
+			if (foundColorCount + 1 >= GameOptions.SingleColorCount)
+			{
+				tiles.FirstOrDefault(x => x.TileColor == CurrentColor).Active = false;
+			}
 			return true;
 		}
 	}
