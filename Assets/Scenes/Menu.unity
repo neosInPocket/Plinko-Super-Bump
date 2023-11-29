@@ -7911,7 +7911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d702d9f94626ff4aadcac1767610f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetGameOptions: 1
+  resetGameOptions: 0
 --- !u!4 &1899476186
 Transform:
   m_ObjectHideFlags: 0
